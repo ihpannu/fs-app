@@ -9,6 +9,7 @@ class App extends Component {
 
   fetchContest = contestId => {
     pushState({ currentContestId: contestId }, `/contest/${contestId}`);
+    this.setState();
   };
 
   render() {
