@@ -17,6 +17,7 @@
     "json-loader": "^0.5.7",
     "mongodb": "3.0.5",
     "node-sass-middleware": "^0.11.0",
+    "prop-types": "^15.6.1",
     "react": "16.3.0",
     "react-dom": "16.3.0"
   },
@@ -31,6 +32,6 @@
     "eslint-plugin-react": "^7.7.0",
     "nodemon": "^1.11.0",
     "webpack": "4.4.1",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.14"
   }
 }

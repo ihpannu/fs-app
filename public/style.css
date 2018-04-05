@@ -11,3 +11,6 @@ body {
     background: #cad7fd; }
   .ContestPreview .contest-name {
     padding: 0.5rem; }
+
+.link {
+  cursor: pointer; }

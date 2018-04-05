@@ -7,6 +7,3 @@ ReactDOM.hydrate(
   <App initialContests={window.initialData.contests} />,
   document.getElementById('root')
 );
-// setTimeout(() => {
-//   ReactDOM.render(<h2>This is unmounted</h2>, document.getElementById('root'));
-// }, 4000);
