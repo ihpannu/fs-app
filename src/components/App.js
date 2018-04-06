@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
 
 import ContestList from './ContestList';
@@ -14,30 +12,25 @@ class App extends Component {
 
   fetchContest = contestId => {
     pushState({
-      currentContestId: contestId
-    }, `/contest/${contestId}`);
-    this.setState()
+    pushState(
+      {
+        currentContestId: contestId
+      },
+      `/contest/${contestId}`
+    );
+    this.setState();
   };
-
-
+  // Lookup the contest
   render() {
-    return ( <
-      div className = "App" >
-      <
-      Header message = {
-        this.state.message
-      }
-      /> <
-      ContestList onContestClick = {
-        this.fetchContest
-      }
-      contests = {
-        this.state.contests
-      }
-      /> <
-      div / >
-      <
-      /div>
+    return (
+      <div className="App">
+        <Header message={this.state.message} />{' '}
+        <ContestList
+          onContestClick={this.fetchContest}
+          contests={this.state.contests}
+        />
+        <div />
+      </div>
     );
   }
 }
