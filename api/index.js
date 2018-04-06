@@ -14,7 +14,7 @@ router.get('/contests', (req, res) => {
 router.get('/contests/:contestId', (req, res) => {
   let contest = contests[req.params.contestId];
   contest.description = [
-    'lorem ipsum sjhfjkas kjsahdfkj ashfdkja fhajks dfjkahlsdf '
+    'Carried nothing on am warrant towards. Polite in of in oh needed itself silent course. Assistance travelling so especially do prosperous appearance mr no celebrated. Wanted easily in my called formed suffer. Songs hoped sense as taken ye mirth at. Believe fat how six drawing pursuit minutes far. Same do seen head am part it dear open to. Whatever may scarcely judgment had. '
   ];
   res.send(contest);
 });

@@ -3,13 +3,11 @@ import Header from './Header';
 
 import ContestList from './ContestList';
 import Contest from './Contest';
+import * as api from '../api';
 
 const pushState = (obj, url) => window.history.pushState(obj, '', url);
 class App extends Component {
-  state = {
-    message: 'Naming Contests',
-    contests: this.props.initialContests
-  };
+  state = this.props.intialData;
 
   fetchContest = contestId => {
     pushState(
@@ -18,15 +16,29 @@ class App extends Component {
       },
       `/contest/${contestId}`
     );
-    // Lookup the contest
-    this.setState({
-      pageHeader: this.state.contests[contestId].contestName,
-      currentContestId: contestId
+    api.fetchContest(contestId).then(contest => {
+      this.setState({
+        currentContestId: contest.id,
+        contests: {
+          ...this.state.contests,
+          [contest.id]: contest
+        }
+      });
     });
   };
 
+  currentContest() {
+    return this.state.contests[this.state.currentContestId];
+  }
+  pageHeader() {
     if (this.state.currentContestId) {
-      return <Contest {...this.state.contests[this.state.currentContestId]} />;
+      return this.currentContest().contestName;
+    }
+    return 'Naming Contests';
+  }
+  currentContent() {
+    if (this.state.currentContestId) {
+      return <Contest {...this.currentContest} />;
     }
     return (
       <ContestList
@@ -39,7 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header message={this.state.pageHeader} />
+        <Header message={this.pageHeader()} />
         {this.currentContent()}
         <div />
       </div>
