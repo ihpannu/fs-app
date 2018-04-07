@@ -7,7 +7,7 @@ import * as api from '../api';
 
 const pushState = (obj, url) => window.history.pushState(obj, '', url);
 class App extends Component {
-  state = this.props.intialData;
+  state = this.props.initialData;
 
   fetchContest = contestId => {
     pushState(

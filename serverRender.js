@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
 import App from './src/components/App';
-
 import Axios from 'axios';
 import config from './config';
 // fetch data from the api
