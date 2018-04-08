@@ -38,7 +38,7 @@ class App extends Component {
   }
   currentContent() {
     if (this.state.currentContestId) {
-      return <Contest {...this.currentContest} />;
+      return <Contest  contestListClick={} {...this.currentContest} />;
     }
     return (
       <ContestList

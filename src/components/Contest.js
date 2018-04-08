@@ -6,8 +6,10 @@ class Contest extends Component {
       <div className="Contest">
         <div className="contest-description">
           Description: {this.props.description}{' '}
-        </div>{' '}
-        <div className="home-link link">Contest Link </div>{' '}
+        </div>
+        <div className="home-link link" onClick={this.props.contestListClick}>
+          Contest Link
+        </div>
       </div>
     );
   }
